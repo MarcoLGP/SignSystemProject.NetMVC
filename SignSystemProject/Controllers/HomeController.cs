@@ -2,7 +2,6 @@
 using SignSystemProject.Models;
 using System.Diagnostics;
 
-
 namespace SignSystemProject.Controllers
 {
     public class HomeController : Controller
