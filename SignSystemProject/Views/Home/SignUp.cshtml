@@ -1,0 +1,24 @@
+@model SignInResponse;
+
+@{
+    Layout="../Shared/_LayoutSign.cshtml";
+}
+<h2>Registro</h2>
+<form class="sign_form" method="post">
+    <div class="sign_input_container">
+        <i class="fa-regular fa-user" style="font-size: 20px;"></i>
+        <input class="sign_input" asp-for="Email" placeholder="Nome">
+    </div>
+    <div class="sign_input_container">
+        <i class="fa-regular fa-envelope" style="font-size: 20px;"></i>
+        <input class="sign_input" asp-for="Email" placeholder="E-mail">
+    </div>
+    <div class="sign_input_container">
+        <i class="fa fa-lock" style="font-size: 20px;"></i>
+        <input type="password" class="sign_input" asp-for="Password" placeholder="Senha">
+    </div>
+    <div class="sign_form_footer">
+        <a asp-action="Index" class="sign_form_helper">Já possuo uma conta</a>
+        <button type="submit" style="width: 120px;">Registrar</button> 
+    </div>
+</form>

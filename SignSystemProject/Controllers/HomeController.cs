@@ -11,6 +11,12 @@ namespace SignSystemProject.Controllers
         {
             return View();
         }
+        
+        [HttpGet]
+        public IActionResult SignUp()
+        {
+            return View();
+        } 
 
         [HttpPost]
         public IActionResult Index(SignInResponse form)

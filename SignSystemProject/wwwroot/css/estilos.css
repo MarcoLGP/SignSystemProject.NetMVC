@@ -34,12 +34,87 @@ a {
 
 .sign_right_side {
     width: 50%;
+    min-height: 100vh;
+    max-height: 100vh;
+    font-family: Nunito;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .sign_right_side > video {
-    height: 280px;
+    height: 240px;
     width: 280px;
+}
+
+.sign_right_side h2 {
+    margin-top: -15px;
+    font-weight: 700;
+    font-size: 25px;
+}
+
+.sign_form {
+    width: 60%;
+    height: 44%;
+}
+
+.sign_input_container {
+    border-bottom: 1px solid #8FA3A9;
+    display: flex;
+    height: 37px;
+    align-items: center;
+    color: #8FA3A9;
+    margin-bottom: 30px;
+}
+
+.sign_input {
+    border: none;
+    font-family: Poppins;
+    font-weight: 400;
+    width: 90%;
+    padding-left: 10px;
+}
+
+.sign_input:focus {
+    outline: none;
+}
+
+.sign_form_footer {
+    display: flex;
+    margin-top: -5px;
+    font-family: Poppins;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sign_form_footer button {
+    height: 50px;
+    width: 100px;
+    cursor: pointer;
+    background-color: black;
+    font-family: Poppins;
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: 25px;
+    border: none;
+    color: #fff;
+}
+
+.sign_form_helper:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.sign_right_side footer {
+    height: 13%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.sign_social_login_container {
+    display: flex;
+    align-items: center;
 }
