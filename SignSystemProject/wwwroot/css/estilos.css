@@ -1,0 +1,45 @@
+html,
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    min-height: 100vh;
+    width: 100vw;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.sign_container {
+    display: flex;
+    min-height: 100%;
+    width: 100%;
+}
+
+.sign_left_side {
+    width: 50%;
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(https://images.pexels.com/photos/450035/pexels-photo-450035.jpeg?cs=srgb&dl=pexels-mateusz-dach-450035.jpg&fm=jpg&w=4608&h=3072&_gl=1*zkglhi*_ga*MTk1OTY5MDY3My4xNjc0MzMxMjkz*_ga_8JE65Q40S6*MTY3NTAyMjUxOS4xNC4xLjE2NzUwMjMwMTkuMC4wLjA.);
+}
+
+.sign_right_side {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sign_right_side > video {
+    height: 250px;
+    width: 250px;
+}
