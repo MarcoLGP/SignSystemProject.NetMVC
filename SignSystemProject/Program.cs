@@ -1,7 +1,14 @@
+using Microsoft.EntityFrameworkCore;
+using SignSystemProject.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddEntityFrameworkNpgsql()
+    .AddDbContext<Contexto>(options =>
+    options.UseNpgsql("postgres://rcktsoji:yWJgubMV4CXfMYZWCDHlXGUOYBMawIAA@babar.db.elephantsql.com/rcktsoji"));
 
 var app = builder.Build();
 

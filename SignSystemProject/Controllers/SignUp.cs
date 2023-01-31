@@ -16,7 +16,7 @@ namespace SignSystemProject.Controllers
         [HttpPost]
         public ActionResult Index(SignUpResponse  form) 
         {
-            return Content("Usuário cadastrado, faça login");
+            return Content($"Usuário cadastrado: Nome: {form.Name}, Email: {form.Email} Senha: *************");
         }
     }
 }
