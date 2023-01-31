@@ -7,6 +7,7 @@ body {
 body {
     min-height: 100vh;
     width: 100vw;
+    overflow-x: hidden;
 }
 
 a {
@@ -55,7 +56,7 @@ a {
 
 .sign_form {
     width: 60%;
-    height: 44%;
+    min-height: 44%;
 }
 
 .sign_input_container {
