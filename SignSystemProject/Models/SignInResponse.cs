@@ -4,9 +4,10 @@ namespace SignSystemProject.Models
 {
     public class SignInResponse
     {
-        [Required]
+        [Required(ErrorMessage = "Campo de E-mail vazio")]
+        [EmailAddress(ErrorMessage = "Digite um e-mail válido")]
         public string? Email { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Campo de senha vazio")]
         public string? Password { get; set; }
     }
 }

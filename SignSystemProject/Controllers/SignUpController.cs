@@ -1,22 +1,23 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SignSystemProject.Models;
 
 namespace SignSystemProject.Controllers
 {
-    public class HomeController : Controller
+    public class SignUpController : Controller
     {
+
         [HttpGet]
         public ActionResult Index()
         {
             return View();
-        }
+        } 
         
         [HttpPost]
-        public ActionResult Index(SignInResponse form)
+        public ActionResult Index(SignUpResponse form) 
         {
             if (ModelState.IsValid)
             {
-                return Content($"Login efetuado: Email: {form.Email}, Senha: ************");
+                return Content($"Usuário registrado: Nome: {form.Name}, Email: {form.Email}, Senha: **************");
             } else
             {
                 ViewBag.Error = true;
