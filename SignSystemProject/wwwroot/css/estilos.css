@@ -126,3 +126,44 @@ a {
     width: 100%;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
+
+.title_list_users {
+    font-family: "Inter";
+    font-weight: 600;
+}
+
+.list_users_container {
+    margin-left: 20px;
+    font-family: "Inter";
+}
+
+.list_users_table {
+    border-radius: 2px;
+    width: 50%;
+    border-collapse: collapse;
+}
+
+.list_users_table thead {
+    background-color: #04AA6D;
+}
+
+.list_users_table td, .list_users_table th {
+    padding: 8px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.list_users_table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: #04AA6D;
+    color: white;
+}
+
+.list_users_table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.list_users_table tr:hover {
+    background-color: #ddd;
+}
