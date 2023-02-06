@@ -6,13 +6,12 @@ namespace SignSystemProject.Controllers
 {
     public class SignUpController : Controller
     {
-        private readonly string _apiEndPoint = "https://localhost:7112/user";
-        private readonly HttpClient _httpClient = null;
+        private readonly string _apiEndPoint = "http://localhost:5051/user";
+        private readonly HttpClient _httpClient;
 
         public SignUpController()
         {
             _httpClient = new HttpClient();
-            _httpClient.BaseAddress = new Uri(_apiEndPoint);
         }
 
         [HttpGet]
