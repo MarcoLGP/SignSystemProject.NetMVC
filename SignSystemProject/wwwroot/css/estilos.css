@@ -61,6 +61,15 @@ a {
     color: red;
 }
 
+.validation-summary-errors li {
+    margin-right: 30px;
+}
+
+.input_validation_server {
+    margin-top: -10px;
+    color: red;
+}
+
 .sign_form {
     width: 60%;
     padding-bottom: 25px;

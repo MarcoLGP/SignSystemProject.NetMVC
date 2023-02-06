@@ -6,7 +6,7 @@ namespace SignSystemProject.Controllers
 {
     public class SignUpController : Controller
     {
-        private readonly string _apiEndPoint = "http://localhost:5051/user";
+        private readonly string _apiEndPoint = "https://signsystemapi.bsite.net/user";
         private readonly HttpClient _httpClient;
 
         public SignUpController()
@@ -26,17 +26,18 @@ namespace SignSystemProject.Controllers
             if (ModelState.IsValid)
             {
                 string json = JsonConvert.SerializeObject(form);
-                StringContent httpContent = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
+                StringContent httpContent = new(json, System.Text.Encoding.UTF8, "application/json");
                 var response = await _httpClient.PostAsync($"{_apiEndPoint}/addUser", httpContent);
                 if (response.IsSuccessStatusCode)
                 {
-                    return Content($"Usuário registrado: Nome: {form.Name}, Email: {form.Email}, Senha: **************, StatusCode: {response.StatusCode}");
+                    return RedirectToAction("Index", "Home");
                 }
                 else
                 {
-                    return Content($"Error: {response.StatusCode}");
+                    return Content($"Erro: {response.StatusCode}");
                 }
-            } else
+            } 
+            else
             {
                 ViewBag.Error = true;
                 return View();

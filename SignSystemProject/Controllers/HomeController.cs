@@ -7,7 +7,7 @@ namespace SignSystemProject.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly string _apiEndPoint = "http://localhost:5051/user";
+        private readonly string _apiEndPoint = "https://signsystemapi.bsite.net/user";
         private readonly HttpClient _httpClient;
 
         public HomeController()
@@ -29,15 +29,32 @@ namespace SignSystemProject.Controllers
                 string json = JsonConvert.SerializeObject(form);
                 StringContent httpContent = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
                 var response = await _httpClient.PostAsync($"{_apiEndPoint}/signIn", httpContent);
-                List<UserViewModel>? usuarios = null;
                 if (response.IsSuccessStatusCode)
                 {
+                    List<UserViewModel>? usuarios = null;
                     string content = await response.Content.ReadAsStringAsync();
                     usuarios = JsonConvert.DeserializeObject<List<UserViewModel>>(content);
+                    return View("Users", usuarios);
                 }
-                Console.WriteLine(usuarios);
-                return View("Users", usuarios);
-            } else
+                else
+                {
+                    ViewBag.Error = true;
+                    switch ((int)response.StatusCode)
+                    {
+                        case 404:
+                            ViewBag.ErrorLog = "Usuário não registrado";
+                            return View();
+                        case 401:
+                            ViewBag.ErrorLog = "Credenciais inválidas";
+                            return View();
+                        default:
+                            ViewBag.ErrorLog = "Erro interno";
+                            return View();
+                    }
+                }
+                
+            } 
+            else
             {
                 ViewBag.Error = true;
                 return View();
